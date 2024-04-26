@@ -2,6 +2,20 @@ defmodule Connection do
   @moduledoc ~S"""
   A behaviour module for implementing connection processes.
 
+  > #### Deprecation Warning {: .warning}
+  >
+  > With the inclusion of [`gen_statem`](https://www.erlang.org/doc/man/gen_statem.html)
+  in Erlang/OTP, this project is no longer necessary.
+  >
+  > See the following pull request as examples
+  of replacing `Connection` by `gen_statem` in existing projects:
+  >   * https://github.com/elixir-ecto/postgrex/pull/643
+  >   * https://github.com/elixir-ecto/postgrex/pull/644
+  >   * https://github.com/elixir-ecto/db_connection/pull/275
+  >
+  > We may release new versions if necessary to keep compatibility with Erlang/OTP and
+  Elixir but otherwise this package is no longer recommended for new projects.
+
   The `Connection` behaviour is a superset of the `GenServer` behaviour. The
   additional return values and callbacks are designed to aid building a
   connection process that can handle a peer being (temporarily) unavailable.
